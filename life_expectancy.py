@@ -72,14 +72,37 @@ gadph_df_subset = gadph_df[cols_to_keep]
 # drop rows where age is . 
 gadph_df_subset = gadph_df_subset[gadph_df_subset.age != "." ]
 gadph_df_subset = gadph_df_subset[gadph_df_subset.age != "We haven't run out of rows yet" ]
-gadph_df_subset = gadph_df_subset[gadph_df_subset.race != "Unknown" ]
-gadph_df_subset = gadph_df_subset[gadph_df_subset.race != "Other" ]
+#gadph_df_subset = gadph_df_subset[gadph_df_subset.race != "Unknown" ]
+#gadph_df_subset = gadph_df_subset[gadph_df_subset.race != "Other" ]
 
 #convert age to numeric
 gadph_df_subset["age"] = pd.to_numeric(gadph_df_subset["age"])
 
 # drop rows where every value is missing
 gadph_df_subset2 = gadph_df_subset.dropna(how='all')
+
+##############################################################################
+#                                                                            #
+#                          Examine the data                                  #
+#                                                                            #
+##############################################################################
+
+# Summary of life expectancy values
+le_summary = le_df_subset[["Life Expectancy", 'Life Expectancy (AIAN)',
+       'Life Expectancy (Asian)', 'Life Expectancy (Black)',
+       'Life Expectancy (Hispanic)', 'Life Expectancy (White)']].describe().round(1)
+
+# Examine counties where black life expectancy > white life expectancy
+ledf_sub_bw =  le_df_subset[le_df_subset["Life Expectancy (Black)"] > le_df_subset["Life Expectancy (White)"]]
+
+# Examine counties where hispanic life expectancy > 90
+ledf_sub_hisp =  le_df_subset[le_df_subset["Life Expectancy (Hispanic)"] > 90]
+
+# Frequency of race and ethnicity variables
+gadph_df_subset2.groupby(['ethnicity'], as_index=False).size()
+gadph_df_subset2.groupby(['race'], as_index=False).size()
+gadph_df_subset2.groupby(['ethnicity', 'race'], as_index=False).size()
+
 ##############################################################################
 #                                                                            #
 #                 Create a common race variable                              #
@@ -98,9 +121,7 @@ gadph_df_subset2 = gadph_df_subset.dropna(how='all')
                          
                          and includes their ethnicicty (hispanic/not)'''
                          
-le_df_subset.columns
-gadph_df_subset.race.unique()
-gadph_df_subset.ethnicity.unique()
+
 # Hispanic/Latino ethnicity any race is one category. Then Black, White, AIAN, 
 # Asian, are all defined as non-Hispanic Black, non-Hispanic White, etc.
 
