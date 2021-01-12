@@ -22,8 +22,6 @@ prog_path = os.path.join(base_path, "Covid_Tracking_Project/life_expectancy")
 in_path = os.path.join(prog_path, "data/input")
 out_path = os.path.join(prog_path, "data/output") 
 
-isNewData = False
-
 ##############################################################################
 #                                                                            #
 #               Read in life expectancy data                                 #
@@ -58,13 +56,11 @@ le_df_subset = le_df_subset.dropna(subset=['County'])
 #                           Read in death data                               #
 #                                                                            #
 ##############################################################################
-if (isNewData):
-    gadph_df = pd.read_csv(os.path.join(in_path, 
+
+gadph_df = pd.read_csv(os.path.join(in_path, 
                                     "GA Race Age Deaths - Paste CSV here.csv"))
 
-if (not isNewData):
-    gadph_df = pd.read_csv(os.path.join(in_path, 
-                                    "previous -- GA Race Age Deaths - Paste CSV here_old.csv"))
+
     
 #rename columns
 gadph_df = gadph_df.rename({'https://dph.georgia.gov/covid-19-daily-status-report' : 'age',
@@ -164,39 +160,41 @@ merged_df["YLL_county"] = merged_df.apply(
 #                                                                            #
 ##############################################################################
 
-descriptive_stats = merged_df.groupby(["new_race"])[["YLL"]].describe()
-descriptive_stats_county = merged_df.groupby(["new_race"])[["YLL_county"]].describe()
+merged_df.groupby(["new_race"])[["YLL"]].describe().round(1)
 
-merged_df[merged_df["new_race"] == "African-American/ Black"].YLL.hist()
-merged_df[merged_df["new_race"] == "Asian"].YLL.hist()
-merged_df[merged_df["new_race"] == "White"].YLL.hist()
-merged_df[merged_df["new_race"] == "Hispanic/ Latino"].YLL.hist()
 
-merged_df.groupby(["new_race"])["age"].mean()
-merged_df.groupby(["new_race"])["YLL_county"].sum()
+
+merged_df.groupby(["new_race"])["age"].mean().round(1)
+
 
 
 #fill na with 0
 merged_df.YLL = merged_df.YLL.fillna(0)
+
+
+
 merged_df.groupby(["new_race"])["YLL"].sum()
+merged_df.groupby(["new_race"])["YLL"].mean().round(1)
+merged_df.groupby(["new_race"])["YLL"].count()
 
 
-# calculate for native hawaiian/pi
+
 
 # why is american indian/ alaska native not showing up? 
 # because the counties for which we have AI/AN life expectancy data had no AI/AN deaths
 
-# Compare life expectancy by county 
-if (isNewData):
-    new_data = merged_df[["County", "Life Expectancy (Hispanic)"]].drop_duplicates()
-
-if (not isNewData):
-   old_data = merged_df[["County", "Life Expectancy (Hispanic)"]].drop_duplicates()
 
 
 
 
 
+pd.value_counts(merged_df.new_race)
+
+##############################################################################
+#                                                                            #
+#                                Output data                                 #
+#                                                                            #
+##############################################################################
 
 
 
