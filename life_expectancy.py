@@ -36,7 +36,7 @@ le_df = pd.read_csv(os.path.join(in_path,
 cols_to_keep = ["State",
                 "County",
                 "Life Expectancy",
-                "Life Expectancy (AIAN)",
+                'Life Expectancy (AIAN)',
                 "Life Expectancy (Asian)", 
                 "Life Expectancy (Black)", 
                 "Life Expectancy (Hispanic)", 
@@ -110,8 +110,14 @@ gadph_df_subset2["new_race"] = gadph_df_subset2.apply(
     else x['race'], axis=1
     )
 
-gadph_df_subset2.new_race.unique()
+# Check new race variable
+gadph_df_subset2.groupby(['ethnicity', 'race', 'new_race'], as_index=False).size()
 
+# delete if new_race is AIAN or NHPI
+gadph_df_subset2 = gadph_df_subset2[gadph_df_subset2.new_race != "American Indian/ Alaska Native" ]
+gadph_df_subset2 = gadph_df_subset2[gadph_df_subset2.new_race != "Native Hawaiian/ Pacific Islander" ]
+gadph_df_subset2 = gadph_df_subset2[gadph_df_subset2.new_race != "Other" ]
+gadph_df_subset2 = gadph_df_subset2[gadph_df_subset2.new_race != "Unknown" ]
 
 ##############################################################################
 #                                                                            #
