@@ -133,6 +133,8 @@ gadph_df_subset2.groupby(['ethnicity'], as_index=False).size()
 gadph_df_subset2.groupby(['race'], as_index=False).size()
 gadph_df_subset2.groupby(['ethnicity', 'race'], as_index=False).size()
 
+gadph_df_subset2["County"].unique()
+
 ##############################################################################
 #                                                                            #
 #                 Create a common race variable                              #
