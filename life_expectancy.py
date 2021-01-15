@@ -189,28 +189,20 @@ merged_df = pd.merge(merged_df, demo_subset2, how='left', on = ['County'])
 
 # Calculate life expectancy based on the life expectancy for their race and county
 # Native Hawaiian/Pacific Islander is excluded because it's not a category in the RWJF data
-merged_df["YLL"] = merged_df.apply(
+merged_df["YLL_racecounty"] = merged_df.apply(
     lambda x:
         x['Life Expectancy (Black)'] - x['age'] if x['new_race']=='African-American/ Black' 
         else (x['Life Expectancy (Asian)'] - x['age'] if x['new_race']=='Asian' 
         else (x['Life Expectancy (White)'] - x['age'] if x['new_race']=='White' 
         else (x['Life Expectancy (Hispanic)'] - x['age'] if x['new_race']=='Hispanic/ Latino' 
-        else np.nan))), 
-                                                              axis=1
-    )
-    
+        else np.nan))),  axis=1 )
  
 # add id values
 merged_df['id'] = range(1, len(merged_df) + 1)
-
-merged_df.loc[merged_df.YLL < 0, "YLL"] = 0  
- 
+merged_df.loc[merged_df.YLL_racecounty < 0, "YLL_racecounty"] = 0  
 
 # Calculate life expectancy based on the life expectancy for their county (not stratified by race)
-
 merged_df["YLL_county"] =  merged_df['Life Expectancy'] - merged_df['age']
-
-
 merged_df.loc[merged_df.YLL_county < 0, "YLL_county"] = 0  
 
 ##############################################################################
