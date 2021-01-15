@@ -211,35 +211,23 @@ merged_df.loc[merged_df.YLL_county < 0, "YLL_county"] = 0
 #                                                                            #
 ##############################################################################
 
-merged_df.groupby(["new_race"])[["YLL"]].describe().round(1)
+yll_dist = merged_df.groupby(["new_race"])[["YLL_county", "YLL_racecounty"]].describe().round(1)
+mean_age = merged_df.groupby(["new_race"])["age"].mean().round(1)
+total_yll = merged_df.groupby(["new_race"])[["YLL_county", "YLL_racecounty"]].sum()
+mean_yll = merged_df.groupby(["new_race"])[["YLL_county", "YLL_racecounty"]].mean().round(1)
+num_deaths = pd.value_counts(merged_df.new_race)
 
+# Examine counties with weird data:
 
+# Examine counties where black life expectancy > white life expectancy
+bw_df = merged_df[merged_df["Life Expectancy (Black)"] > merged_df["Life Expectancy (White)"]]
+bw_df = bw_df[["County", "Life Expectancy (Black)", "Life Expectancy (White)", "TOT_POP", "WA_TOT", "BA_TOT", "AA_TOT", "WA_pct", "BA_pct", "AA_pct" ]]
+bw_df = bw_df.drop_duplicates()
 
-merged_df.groupby(["new_race"])["age"].mean().round(1)
-
-
-
-#fill na with 0
-merged_df.YLL = merged_df.YLL.fillna(0)
-
-
-
-merged_df.groupby(["new_race"])["YLL"].sum()
-merged_df.groupby(["new_race"])["YLL"].mean().round(1)
-merged_df.groupby(["new_race"])["YLL"].count()
-
-
-
-
-# why is american indian/ alaska native not showing up? 
-# because the counties for which we have AI/AN life expectancy data had no AI/AN deaths
-
-
-
-
-
-
-pd.value_counts(merged_df.new_race)
+# Examine counties where hispanic life expectancy > 90
+hisp_df =  merged_df[merged_df["Life Expectancy (Hispanic)"] > 90]
+hisp_df = hisp_df[["County", "Life Expectancy (Hispanic)", "TOT_POP", "NH_TOT", "H_TOT", "NH_pct", "H_pct" ]]
+hisp_df = hisp_df.drop_duplicates()
 
 ##############################################################################
 #                                                                            #
