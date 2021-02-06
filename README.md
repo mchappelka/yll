@@ -8,7 +8,8 @@ We seek to quantify the years of life lost due to COVID in Georgia, using race a
 
 # Specifications
 * Read in the death data.  
-* Drop observations where the county of residence is not Georgia (will say "Non-GA Resident/Unknown State" or "Unknown") 
-<br/>
+    * Drop observations where the county of residence is not Georgia (will say "Non-GA Resident/Unknown State" or "Unknown") 
+
 * Read in GA demographic data. This will help us give us the racial demographics of each county as well as the county population, which can help us understand if small population sizes might be contributing to extreme life expectancy values.  <br/>
-* Filter the dataset to just include only the most recent population estimates (from 2019). 
+    * Filter the dataset to just include only the most recent population estimates (from 2019). 
+        * These will have a YEAR value of 12. 
