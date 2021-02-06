@@ -1,5 +1,5 @@
 # Overview
-We seek to quantify the years of life lost due to COVID in Georgia, using race and county specific life expectancy.  
+We seek to quantify the years of life lost due to COVID-19 in Georgia, using race and county specific life expectancy. Georgia was chosen because the race, age, and county of each recorded COVID-19 death. 
 
 # Data sources
 * GA county life expectancy by race: https://www.countyhealthrankings.org/app/georgia/2020/measure/outcomes/147/data 
