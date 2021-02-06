@@ -39,7 +39,12 @@ We seek to quantify the years of life lost due to COVID-19 in Georgia, using rac
          * Mean YLL, by race
 
 # Notes
-# Limitations       
+- emails w/ RWJF
+
+# Limitations   
+- race/ethnicity
+- COVID data
+
 # References 
 Abraído-Lanza, A F et al. “The Latino mortality paradox: a test of the "salmon bias" and healthy migrant hypotheses.” American journal of public health vol. 89,10 (1999): 1543-8. doi:10.2105/ajph.89.10.1543 <br/><br/>
 Boing, Antonio Fernando, et al. “Quantifying and Explaining Variation in Life Expectancy at Census Tract, County, and State Levels in the United States.” PNAS, National Academy of Sciences, 28 July 2020, www.pnas.org/content/117/30/17688. <br/><br/>
