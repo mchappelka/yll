@@ -17,3 +17,8 @@ We seek to quantify the years of life lost due to COVID in Georgia, using race a
     * This file has total population by race and gender for each county, but not total population by race for all genders. Sum the male and female columns from each race to calculate the total population for each race. 
 * Read in life expectancy data
 * Create a common race variable
+
+# Contributors
+Miriam Chappelka
+Charlotte Minsky
+Alice Goldfarb
