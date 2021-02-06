@@ -9,7 +9,11 @@ We seek to quantify the years of life lost due to COVID in Georgia, using race a
 # Specifications
 * Read in the death data.  
     * Drop observations where the county of residence is not Georgia (will say "Non-GA Resident/Unknown State" or "Unknown") 
-
 * Read in GA demographic data. This will help us give us the racial demographics of each county as well as the county population, which can help us understand if small population sizes might be contributing to extreme life expectancy values.  <br/>
-    * Filter the dataset to just include only the most recent population estimates (from 2019). 
-        * These will have a YEAR value of 12. 
+    * Filter the dataset to include only the most recent population estimates (from 2019). 
+        * These will have a YEAR value of 12. (This comes from the Census' file layout document : https://www2.census.gov/programs-surveys/popest/technical-documentation/file-layouts/2010-2019/cc-est2019-agesex.pdf)
+    * Filter the data to include only the county level total (as opposed to age-county level total)
+        * These will have an AGEGRP value of 0. (also comes from Census' file layout document)
+    * This file has total population by race and gender for each county, but not total population by race for all genders. Sum the male and female columns from each race to calculate the total population for each race. 
+* Read in life expectancy data
+* Create a common race variable
