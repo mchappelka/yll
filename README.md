@@ -19,6 +19,6 @@ We seek to quantify the years of life lost due to COVID in Georgia, using race a
 * Create a common race variable
 
 # Contributors
-Miriam Chappelka
-Charlotte Minsky
-Alice Goldfarb
+Miriam Chappelka <br/>
+Charlotte Minsky <br/>
+Alice Goldfarb <br/>
