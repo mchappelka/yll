@@ -26,7 +26,7 @@ We seek to quantify the years of life lost due to COVID-19 in Georgia, using rac
  * Calculate years of potential life lost due to COVID-19 (YLL), 
      * YLL, stratified by race and county
          * Calculate years of life lost by subtracting the life expectancy (based on race and county) from age at death
-         * If the age at death is greater than life expectany, set YLL to 0.
+         * If the age at death is greater than life expectany, set YLL to 0. (https://www.cdc.gov/injury/wisqars/fatal_help/definitions_ypll.html#:~:text=YPLL%20is%20calculated%20by%20subtracting,))%3D63%2B28%3D91.)
      * YLL, stratified by county; not stratified by race
          * Calculate years of life lost by subtracting the life expectancy (based on county) from the age of death
          * If the age at death is greater than life expectany, set YLL to 0.
