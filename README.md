@@ -20,16 +20,27 @@ We seek to quantify the years of life lost due to COVID-19 in Georgia, using rac
     * Anyone who has Hispanic ethnicity will be categorized as Hispanic, regardless of race. 
     * Everyone without Hispanic ethnicity will be categorized based on their race. 
     * Since we have too little data for people of these races, drop anyone categorized as: American Indian/ Alaska Native, Native Hawaiian/ Pacific Islander, Other, Unknown
-    * [TODO: CITE THAT THIS IS STANDARD]
  * Merge data sets together
      * Left join death data with life expectancy data, using County as the merge variable.
      * Left join the resulting data set with demographic data, using County as the merge variable.
- * Calculate years of life lost due to COVID-19 (YLL)
-     * [TODO: CITE THAT NEGATIVE YLL SHOULD BE O]
-     * [TODO: FINISH THIS SECTION]
- * Examine
-     * [TODO: FINISH THIS SECTION]
+ * Calculate years of potential life lost due to COVID-19 (YLL), 
+     * YLL, stratified by race and county
+         * Calculate years of life lost by subtracting the life expectancy (based on race and county) from age at death
+         * If the age at death is greater than life expectany, set YLL to 0.
+     * YLL, stratified by county; not stratified by race
+         * Calculate years of life lost by subtracting the life expectancy (based on county) from the age of death
+         * If the age at death is greater than life expectany, set YLL to 0.
+ * Analyze the data
+     * Mean age at death, by race
+     * Number of deaths, by race
+     * For both YLL calculations (race-county and just county), output the following:
+         * Distribution (min, 25th percentile, median, 75Th percentile, max, mean standard deviation) of YLL by race
+         * Sum of YLL, by race 
+         * Mean YLL, by race
 
+# Notes
+# Limitations       
+# References 
 # Contributors
 From the COVID Tracking Project:
 Miriam Chappelka <br/>
