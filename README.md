@@ -16,9 +16,22 @@ We seek to quantify the years of life lost due to COVID-19 in Georgia, using rac
         * These will have an AGEGRP value of 0. (also comes from Census' file layout document)
     * This file has total population by race and gender for each county, but not total population by race for all genders. Sum the male and female columns from each race to calculate the total population for each race. 
 * Read in life expectancy data
-* Create a common race variable
+* Create a new race variable in the death data. The County Health Rankings life expectancy data categorizes people as AIAN (American Indian/Alaska Native), Asian, Black, Hispanic, and White. The Georgia Department of Public Health death data categorizes people as African-American/Black, White, Other, American Indian/Alaska Native, Unknown, Asian, Native Hawaiian/ Pacific Islander, and separately tracks their ethnicity (whether they are Hispanic or not). In order to combine these datasets, we need to have a common definition of race/ethnicity
+    * Anyone who has Hispanic ethnicity will be categorized as Hispanic, regardless of race. 
+    * Everyone without Hispanic ethnicity will be categorized based on their race. 
+    * Since we have too little data for people of these races, drop anyone categorized as: American Indian/ Alaska Native, Native Hawaiian/ Pacific Islander, Other, Unknown
+    * [TODO: CITE THAT THIS IS STANDARD]
+ * Merge data sets together
+     * Left join death data with life expectancy data, using County as the merge variable.
+     * Left join the resulting data set with demographic data, using County as the merge variable.
+ * Calculate years of life lost due to COVID-19 (YLL)
+     * [TODO: CITE THAT NEGATIVE YLL SHOULD BE O]
+     * [TODO: FINISH THIS SECTION]
+ * Examine
+     * [TODO: FINISH THIS SECTION]
 
 # Contributors
+From the COVID Tracking Project:
 Miriam Chappelka <br/>
 Charlotte Minsky <br/>
 Alice Goldfarb <br/>
