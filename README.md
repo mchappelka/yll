@@ -38,10 +38,10 @@ We seek to quantify the years of life lost due to COVID-19 in Georgia, using rac
          * Sum of YLL, by race 
          * Mean YLL, by race
 
-# Notes
+# Notes [TODO]
 - emails w/ RWJF
 
-# Limitations   
+# Limitations [TODO]
 - race/ethnicity
 - COVID data
 - census tract vs county
