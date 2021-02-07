@@ -45,6 +45,7 @@ We seek to quantify the years of life lost due to COVID-19 in Georgia, using rac
 - race/ethnicity
 - COVID data
 - census tract vs county
+ * Anyone over 90 as categorized as being 90 years old.
 
 # References 
 Abraído-Lanza, A F et al. “The Latino mortality paradox: a test of the "salmon bias" and healthy migrant hypotheses.” American journal of public health vol. 89,10 (1999): 1543-8. doi:10.2105/ajph.89.10.1543 <br/><br/>
