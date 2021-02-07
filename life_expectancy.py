@@ -29,7 +29,6 @@ out_path = os.path.join(prog_path, "data/output")
 le_df = pd.read_csv(os.path.join(in_path, 'Additional Measure Data-Table 1.csv'), 
                     header = 1)
 
-# rename column
 cols_to_keep = ["State",
                 "County",
                 "Life Expectancy",
@@ -62,11 +61,9 @@ cols_to_keep = ['ethnicity', 'race', 'sex', 'County', 'age']
 
 gadph_df_subset = gadph_df[cols_to_keep]
 
-# drop rows where age is . 
+# drop rows where the age column doesn't have an age value 
 gadph_df_subset = gadph_df_subset[gadph_df_subset.age != "." ]
 gadph_df_subset = gadph_df_subset[gadph_df_subset.age != "We haven't run out of rows yet" ]
-#gadph_df_subset = gadph_df_subset[gadph_df_subset.race != "Unknown" ]
-#gadph_df_subset = gadph_df_subset[gadph_df_subset.race != "Other" ]
 
 #convert age to numeric
 gadph_df_subset["age"] = pd.to_numeric(gadph_df_subset["age"])
@@ -97,13 +94,18 @@ demo_df = pd.read_csv(os.path.join(in_path, "ga_county_demographics.csv"))
 demo_df2 = demo_df[demo_df.AGEGRP == 0]  #agrgp of 0 is the total for all age groups
 demo_df2 = demo_df2[demo_df2.YEAR == 12]  # year 12 is the 2019 estimate (most recent)
 
-cols_to_keep = ["CTYNAME",  "TOT_POP", "WA_MALE", "WA_FEMALE", "BA_MALE", "BA_FEMALE", "AA_MALE", "AA_FEMALE", "NH_MALE", "NH_FEMALE","H_MALE", "H_FEMALE"]
+cols_to_keep = ["CTYNAME",  "TOT_POP", "WA_MALE", "WA_FEMALE", "BA_MALE", 
+                "BA_FEMALE", "AA_MALE", "AA_FEMALE", "NH_MALE", "NH_FEMALE",
+                "H_MALE", "H_FEMALE"]
+
 demo_subset = demo_df2[cols_to_keep]
 
 for race in ["WA", "BA", "AA", "NH", "H"]:
     demo_subset[race + "_TOT"] = demo_subset[race + "_FEMALE"]  + demo_subset[race + "_MALE"] 
     demo_subset[race + "_pct"] = demo_subset[race + "_TOT"] / demo_subset["TOT_POP"]
 
+# Remove "County" from the county names so that it is in same format as county
+# names in our other datasets
 demo_subset["County"] = demo_subset["CTYNAME"].str.rstrip('County').str.strip()
 
 cols_to_keep = ["County", "TOT_POP", "WA_TOT", "BA_TOT", "AA_TOT", "NH_TOT",
@@ -165,7 +167,7 @@ gadph_df_subset2["new_race"] = gadph_df_subset2.apply(
 # Check new race variable
 gadph_df_subset2.groupby(['ethnicity', 'race', 'new_race'], as_index=False).size()
 
-# delete if new_race is AIAN or NHPI
+# delete if new_race is AIAN, NHPI, other, or unknown
 gadph_df_subset2 = gadph_df_subset2[gadph_df_subset2.new_race != "American Indian/ Alaska Native" ]
 gadph_df_subset2 = gadph_df_subset2[gadph_df_subset2.new_race != "Native Hawaiian/ Pacific Islander" ]
 gadph_df_subset2 = gadph_df_subset2[gadph_df_subset2.new_race != "Other" ]
@@ -197,8 +199,6 @@ merged_df["YLL_racecounty"] = merged_df.apply(
         else (x['Life Expectancy (Hispanic)'] - x['age'] if x['new_race']=='Hispanic/ Latino' 
         else np.nan))),  axis=1 )
  
-# add id values
-merged_df['id'] = range(1, len(merged_df) + 1)
 merged_df.loc[merged_df.YLL_racecounty < 0, "YLL_racecounty"] = 0  
 
 # Calculate life expectancy based on the life expectancy for their county (not stratified by race)
@@ -217,7 +217,6 @@ total_yll = merged_df.groupby(["new_race"])[["YLL_county", "YLL_racecounty"]].su
 mean_yll = merged_df.groupby(["new_race"])[["YLL_county", "YLL_racecounty"]].mean().round(1)
 num_deaths = pd.value_counts(merged_df.new_race)
 
-# Examine counties with weird data:
 
 # Examine counties where black life expectancy > white life expectancy
 bw_df = merged_df[merged_df["Life Expectancy (Black)"] > merged_df["Life Expectancy (White)"]]
@@ -247,14 +246,18 @@ hisp_df.to_csv(os.path.join(out_path, "hispanic_le_over90.csv"))
 
 # EXCEL
 with pd.ExcelWriter(os.path.join(out_path,"yll.xlsx")) as writer:  
-    yll_dist.to_excel(writer, sheet_name='dist_yll')
+    num_deaths.to_excel(writer, sheet_name='num_deaths') 
     mean_age.to_excel(writer, sheet_name='mean_death_age')
+    yll_dist.to_excel(writer, sheet_name='dist_yll')
     total_yll.to_excel(writer, sheet_name='sum_yll')
     mean_yll.to_excel(writer, sheet_name='mean_yll')
-    num_deaths.to_excel(writer, sheet_name='num_deaths') 
     bw_df.to_excel(writer, sheet_name='black_le_over_white')
-    hisp_df.to_excelwriter, sheet_name='hispanic_le_over90') 
+    hisp_df.to_excel(writer, sheet_name='hispanic_le_over90') 
     
+
+
+
+
 
 
 
