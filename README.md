@@ -41,6 +41,8 @@ https://drive.google.com/file/d/1vYRXa8rsQfSaE_GHCM_CW_IFoPreIYkP/view?usp=shari
          * Sum of YLL, by race 
          * Mean YLL, by race
 
+# Notes
+* High Hispanic life expectancy in some counties might be due to the Hispanic mortality paradox, small populations within counties, and/or right-censoring of the data. 
 
 # Limitations
 * The life expectancy data we used was county or state-level. This may obscure variation occuring within those geographic units. 
