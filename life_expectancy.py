@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Nov  1 19:28:39 2020
-
-@author: mchappelka
-"""
-
 import pandas as pd
 import numpy as np
 import os
@@ -52,11 +44,10 @@ le_df_subset = le_df_subset.dropna(subset=['County'])
 ##############################################################################
 
 gadph_df = pd.read_csv(os.path.join(in_path, 
-                                    "GA Race Age Deaths - Paste CSV here.csv"))
+                                    "GA Race Age Deaths.csv"))
  
 #rename columns
-gadph_df = gadph_df.rename({'https://dph.georgia.gov/covid-19-daily-status-report' : 'age',
-                            'county': 'County'}, axis=1)
+gadph_df = gadph_df.rename({'county': 'County'}, axis=1)
 cols_to_keep = ['ethnicity', 'race', 'sex', 'County', 'age']
 
 gadph_df_subset = gadph_df[cols_to_keep]
@@ -245,7 +236,8 @@ bw_df.to_csv(os.path.join(out_path, "black_le_over_white.csv"))
 hisp_df.to_csv(os.path.join(out_path, "hispanic_le_over90.csv"))
 
 # EXCEL
-with pd.ExcelWriter(os.path.join(out_path,"yll.xlsx")) as writer:  
+with pd.ExcelWriter(os.path.join(out_path,"yll.xlsx")) as writer: 
+    merged_df.to_excel(writer, sheet_name = "analytic_file")
     num_deaths.to_excel(writer, sheet_name='num_deaths') 
     mean_age.to_excel(writer, sheet_name='mean_death_age')
     yll_dist.to_excel(writer, sheet_name='dist_yll')
@@ -253,6 +245,7 @@ with pd.ExcelWriter(os.path.join(out_path,"yll.xlsx")) as writer:
     mean_yll.to_excel(writer, sheet_name='mean_yll')
     bw_df.to_excel(writer, sheet_name='black_le_over_white')
     hisp_df.to_excel(writer, sheet_name='hispanic_le_over90') 
+    
     
 
 
