@@ -4,7 +4,10 @@ We seek to quantify the years of life lost due to COVID-19 in Georgia, using rac
 # Data sources used
 * GA county life expectancy by race: https://www.countyhealthrankings.org/app/georgia/2020/measure/outcomes/147/data 
 * GA race and population demographic data: https://www.census.gov/data/tables/time-series/demo/popest/2010s-counties-detail.html 
-* Death data: https://docs.google.com/spreadsheets/d/1naiRW57-uPggIPpDN5OFKwcBfCokiyxh0YgW1iCdLD0/edit#gid=0  
+* Death data: https://docs.google.com/spreadsheets/d/1naiRW57-uPggIPpDN5OFKwcBfCokiyxh0YgW1iCdLD0/edit#gid=0 
+
+# Resulting data
+https://drive.google.com/file/d/1vYRXa8rsQfSaE_GHCM_CW_IFoPreIYkP/view?usp=sharing
 
 # Specifications
 * Read in the death data.  
@@ -38,14 +41,12 @@ We seek to quantify the years of life lost due to COVID-19 in Georgia, using rac
          * Sum of YLL, by race 
          * Mean YLL, by race
 
-# Notes [TODO]
-- emails w/ RWJF
 
-# Limitations [TODO]
-- race/ethnicity
-- COVID data
-- census tract vs county
- * Anyone over 90 as categorized as being 90 years old.
+# Limitations
+* The life expectancy data we used was county or state-level. This may obscure variation occuring within those geographic units. 
+* Life expectancy data is subject to right-censoring (https://www.nature.com/articles/palcomms201549) which may result in overestimates, especially in small counties. 
+* Although it is standard to recode race and ethnicity as we did, these assignments may not match how individuals identify or how they experience the world.
+* In the death data from Georgia, anyone over 90 was categorized as being 90 years old. For groups whose life expectancy was over 90, this could result in overestimating years of potential life lost, because the deaths of anyone 91 or older will be categorized as occuring when they were younger (90). 
 
 # References 
 Abraído-Lanza, A F et al. “The Latino mortality paradox: a test of the "salmon bias" and healthy migrant hypotheses.” American journal of public health vol. 89,10 (1999): 1543-8. doi:10.2105/ajph.89.10.1543 <br/><br/>
