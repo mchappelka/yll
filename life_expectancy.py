@@ -36,6 +36,8 @@ le_df_subset = le_df[cols_to_keep]
 # state-level values. 
 le_df_subset = le_df_subset.dropna(subset=['County'])
 
+# rename columns
+le_df_subset.columns = le_df_subset.columns.str.replace("Life Expectancy", "County Life Expectancy")
 
 ##############################################################################
 #                                                                            #
@@ -111,7 +113,7 @@ demo_subset2 = demo_subset[cols_to_keep]
 ##############################################################################
 
 # Summary of life expectancy values
-le_summary = le_df_subset[["Life Expectancy", 'Life Expectancy (AIAN)',
+le_summary = le_df_subset[["County Life Expectancy", 'Life Expectancy (AIAN)',
        'Life Expectancy (Asian)', 'Life Expectancy (Black)',
        'Life Expectancy (Hispanic)', 'Life Expectancy (White)']].describe().round(1)
 
@@ -135,7 +137,6 @@ gadph_df_subset2["County"].unique()
 ##############################################################################
 
 ''' RWJF groups people as AIAN, Asian, Black, Hispanic, White
-
  GADPH groups people as 'African-American/ Black', 
                          'White', 
                          'Other',
@@ -180,9 +181,20 @@ merged_df = pd.merge(merged_df, demo_subset2, how='left', on = ['County'])
 #                                                                            #
 ##############################################################################
 
+# County Race Life Expectancy variable 
+merged_df["County Race Life Expectancy"] = merged_df.apply(
+    lambda x:
+        x['Life Expectancy (Black)']  if x['new_race']=='African-American/ Black' 
+        else (x['Life Expectancy (Asian)']  if x['new_race']=='Asian' 
+        else (x['Life Expectancy (White)'] if x['new_race']=='White' 
+        else (x['Life Expectancy (Hispanic)']  if x['new_race']=='Hispanic/ Latino' 
+        else np.nan))),  axis=1 )
+
+    
+ # Calculate it the old way and the new way so you can compare   
 # Calculate life expectancy based on the life expectancy for their race and county
 # Native Hawaiian/Pacific Islander is excluded because it's not a category in the RWJF data
-merged_df["YLL_racecounty"] = merged_df.apply(
+merged_df["YLL_racecounty_orig"] = merged_df.apply(
     lambda x:
         x['Life Expectancy (Black)'] - x['age'] if x['new_race']=='African-American/ Black' 
         else (x['Life Expectancy (Asian)'] - x['age'] if x['new_race']=='Asian' 
@@ -190,6 +202,9 @@ merged_df["YLL_racecounty"] = merged_df.apply(
         else (x['Life Expectancy (Hispanic)'] - x['age'] if x['new_race']=='Hispanic/ Latino' 
         else np.nan))),  axis=1 )
  
+merged_df["YLL_racecounty_new"] = merged_df["County Race Life Expectancy"] - merged_df["age"]
+merged_df["YLL_calc_check"] = merged_df["YLL_racecounty_new"] - merged_df["YLL_racecounty_orig"]
+
 merged_df.loc[merged_df.YLL_racecounty < 0, "YLL_racecounty"] = 0  
 
 # Calculate life expectancy based on the life expectancy for their county (not stratified by race)
@@ -210,13 +225,13 @@ num_deaths = pd.value_counts(merged_df.new_race)
 
 
 # Examine counties where black life expectancy > white life expectancy
-bw_df = merged_df[merged_df["Life Expectancy (Black)"] > merged_df["Life Expectancy (White)"]]
-bw_df = bw_df[["County", "Life Expectancy (Black)", "Life Expectancy (White)", "TOT_POP", "WA_TOT", "BA_TOT", "AA_TOT", "WA_pct", "BA_pct", "AA_pct" ]]
+bw_df = merged_df[merged_df["County Life Expectancy (Black)"] > merged_df["County Life Expectancy (White)"]]
+bw_df = bw_df[["County", "County Life Expectancy (Black)", "County Life Expectancy (White)", "TOT_POP", "WA_TOT", "BA_TOT", "AA_TOT", "WA_pct", "BA_pct", "AA_pct" ]]
 bw_df = bw_df.drop_duplicates()
 
 # Examine counties where hispanic life expectancy > 90
-hisp_df =  merged_df[merged_df["Life Expectancy (Hispanic)"] > 90]
-hisp_df = hisp_df[["County", "Life Expectancy (Hispanic)", "TOT_POP", "NH_TOT", "H_TOT", "NH_pct", "H_pct" ]]
+hisp_df =  merged_df[merged_df["County Life Expectancy (Hispanic)"] > 90]
+hisp_df = hisp_df[["County", "County Life Expectancy (Hispanic)", "TOT_POP", "NH_TOT", "H_TOT", "NH_pct", "H_pct" ]]
 hisp_df = hisp_df.drop_duplicates()
 
 ##############################################################################
@@ -245,6 +260,14 @@ with pd.ExcelWriter(os.path.join(out_path,"yll.xlsx")) as writer:
     mean_yll.to_excel(writer, sheet_name='mean_yll')
     bw_df.to_excel(writer, sheet_name='black_le_over_white')
     hisp_df.to_excel(writer, sheet_name='hispanic_le_over90') 
+    
+
+
+
+
+
+
+
     
     
 
