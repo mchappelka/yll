@@ -190,20 +190,7 @@ merged_df["County Race Life Expectancy"] = merged_df.apply(
         else (x['Life Expectancy (Hispanic)']  if x['new_race']=='Hispanic/ Latino' 
         else np.nan))),  axis=1 )
 
-    
- # Calculate it the old way and the new way so you can compare   
-# Calculate life expectancy based on the life expectancy for their race and county
-# Native Hawaiian/Pacific Islander is excluded because it's not a category in the RWJF data
-merged_df["YLL_racecounty_orig"] = merged_df.apply(
-    lambda x:
-        x['Life Expectancy (Black)'] - x['age'] if x['new_race']=='African-American/ Black' 
-        else (x['Life Expectancy (Asian)'] - x['age'] if x['new_race']=='Asian' 
-        else (x['Life Expectancy (White)'] - x['age'] if x['new_race']=='White' 
-        else (x['Life Expectancy (Hispanic)'] - x['age'] if x['new_race']=='Hispanic/ Latino' 
-        else np.nan))),  axis=1 )
- 
-merged_df["YLL_racecounty_new"] = merged_df["County Race Life Expectancy"] - merged_df["age"]
-merged_df["YLL_calc_check"] = merged_df["YLL_racecounty_new"] - merged_df["YLL_racecounty_orig"]
+merged_df["YLL_racecounty"] = merged_df["County Race Life Expectancy"] - merged_df["age"]
 
 merged_df.loc[merged_df.YLL_racecounty < 0, "YLL_racecounty"] = 0  
 
@@ -260,6 +247,14 @@ with pd.ExcelWriter(os.path.join(out_path,"yll.xlsx")) as writer:
     mean_yll.to_excel(writer, sheet_name='mean_yll')
     bw_df.to_excel(writer, sheet_name='black_le_over_white')
     hisp_df.to_excel(writer, sheet_name='hispanic_le_over90') 
+    
+
+
+
+
+
+
+
     
 
 
