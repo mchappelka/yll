@@ -79,7 +79,29 @@ gadph_df_subset2[gadph_df_subset2.County == "Unknown"].count()
 gadph_df_subset2 = gadph_df_subset2[gadph_df_subset2.County != "Non-GA Resident/Unknown State"]
 gadph_df_subset2 = gadph_df_subset2[gadph_df_subset2.County != "Unknown"]
 
+##############################################################################
+#                                                                            #
+#                           Read in death data                      #
+#                                                                            #
+##############################################################################
 
+# read in the CTP death data here
+file = os.path.join(params.RAW_DATA_PATH, 
+                        'deaths',
+                        'Race + Age Data Archive.xlsx')
+
+df = pd.read_excel(file, sheet_name='Public')
+
+df = df.rename(columns=df.iloc[0]).drop(df.index[0])
+
+cols_to_keep = ['State', 
+                'Age_Bracket', 
+                'Age_Lower', 
+                'Age_Upper'] + [x for x in df.columns if 'Deaths' in x]
+
+df = df[cols_to_keep]
+
+# subset to states
 
 ##############################################################################                                                                       #
 #                 Create a common race variable                              #
