@@ -3,23 +3,23 @@ import os
 import params
 import functions
 
-##############################################################################
-#                                                                            #
-#               Set programming variables                                    #
-#                                                                            #
-##############################################################################
 
-base_path = "C:/Users/hpfla/OneDrive/Documents"
-prog_path = os.path.join(base_path, "Covid_Tracking_Project/life_expectancy")
-in_path = os.path.join(prog_path, "data/000_raw_data")
-out_path = os.path.join(prog_path, "data/100_cleaned_data") 
 ##############################################################################
 #                                                                            #
-#               Read in life expectancy data                                 #
+#               Read in life expectancy data for all states                  #
 #                                                                            #
 ##############################################################################
-le_df = pd.read_csv(os.path.join(in_path, 'Additional Measure Data-Table 1.csv'), 
-                    header = 1)
+df = pd.DataFrame()
+for state in params.STATES:
+    file = os.path.join(params.RAW_DATA_PATH, 
+                        'life_expectancy',
+                        '2020 County Health Rankings {} Data.xlsx'.format(state))
+    curr_df = pd.read_excel(file, sheet_name='Additional Measure Data')
+        
+    # make the top row the column names
+    curr_df = curr_df.rename(columns=curr_df.iloc[0]).drop(curr_df.index[0])
+    df = df.append(curr_df)
+
 
 cols_to_keep = ["State",
                 "County",
@@ -29,24 +29,27 @@ cols_to_keep = ["State",
                 "Life Expectancy (Black)", 
                 "Life Expectancy (Hispanic)", 
                 "Life Expectancy (White)"]
-
-le_df_subset = le_df[cols_to_keep]
-
+    
+df_subset = df[cols_to_keep]
+    
 # there's one row where the County value is missing - the values here are the
 # state-level values. 
-le_df_subset = le_df_subset.dropna(subset=['County'])
-
+df_subset = df_subset.dropna(subset=['County'])
+    
 # rename columns
-le_df_subset.columns = le_df_subset.columns.str.replace("Life Expectancy", "County Life Expectancy")
+df_subset.columns = df_subset.columns.str.replace("Life Expectancy", "County Life Expectancy")
 
-le_df_subset.to_csv(os.path.join(out_path, 'ga_life_expectancy.csv'))
+
+df_subset.to_csv(os.path.join(params.CLEAN_DATA_PATH, 'life_expectancy.csv'))
+
 ##############################################################################
 #                                                                            #
-#                           Read in death data                               #
+#                           Read in Georgia death data                       #
 #                                                                            #
 ##############################################################################
 
-gadph_df = pd.read_csv(os.path.join(in_path, 
+gadph_df = pd.read_csv(os.path.join(params.RAW_DATA_PATH, 
+                                    'deaths',
                                     "GA Race Age Deaths.csv"))
  
 #rename columns
@@ -114,7 +117,7 @@ gadph_df_subset2 = gadph_df_subset2[gadph_df_subset2.new_race != "Unknown" ]
 gadph_df_subset2.to_csv(os.path.join(out_path, 'ga_covid_deaths.csv'))
 ##############################################################################
 #                                                                            #
-#                   Read in county demographic data                          #
+#                   Read in Georgia county demographic data                          #
 #                                                                            #
 ##############################################################################
 
