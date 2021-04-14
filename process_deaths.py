@@ -50,6 +50,7 @@ df = pd.melt(df ,id_vars =['State', "Age_Bracket", "Age_Lower", "Age_Upper"]
 
 # drop "Deaths_" from race
 df["Race"] = df.Race.str.replace("Deaths_", "")
+df["Race"] = df.Race.str.replace("Latinx", "Hispanic")
 
 # Convert values numeric
 cols = ['Age_Lower', 'Age_Upper', 'Deaths']

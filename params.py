@@ -11,5 +11,10 @@ DATA_PATH = os.path.join(PROG_PATH, "data")
 RAW_DATA_PATH = os.path.join(DATA_PATH, "000_raw_data")
 CLEAN_DATA_PATH = os.path.join(DATA_PATH, "100_cleaned_data")
 
-
-STATES = ["Michigan", "Georgia"]
+STATES = ["Michigan", 
+          #"Georgia", 
+          "California", 
+          "Illinois", 
+          "Michigan", 
+          "New Mexico", 
+          "South Dakota"]
