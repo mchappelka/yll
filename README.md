@@ -1,11 +1,6 @@
 # Overview
 We seek to quantify the years of life lost due to COVID-19 in California, Georgia, Illinois, Michigan, New Mexico and South Dakota using race and geography specific (county or state) life expectancy. 
 
-# Running the code
-Open create_analytic.py
-Specify the dataset you'd like created
-Run
-
 # Data sources used
 * Life expectancy data: https://www.countyhealthrankings.org/app/georgia/2021/downloads
 * GA race and population demographic data: https://www.census.gov/data/tables/time-series/demo/popest/2010s-counties-detail.html 
