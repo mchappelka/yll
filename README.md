@@ -9,6 +9,7 @@ We seek to quantify the years of life lost due to COVID-19 in California, Georgi
 
 # Notes
 * High Hispanic life expectancy in some counties might be due to the Hispanic mortality paradox, small populations within counties, and/or right-censoring of the data. 
+* in the state_yll.xlsx, weighted mean age was calculated using the 2000 US standard age distribution
 
 # Limitations
 * The life expectancy data we used was county or state-level. This may obscure variation occuring within those geographic units. 
