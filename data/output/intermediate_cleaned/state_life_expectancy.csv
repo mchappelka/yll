@@ -1,0 +1,31 @@
+State,Race,Life Expectancy
+Michigan,Total,78.140224099
+California,Total,81.676488633
+Illinois,Total,79.379844093
+New Mexico,Total,77.975959449
+South Dakota,Total,78.909322912
+Michigan,AIAN,77.177975374
+California,AIAN,78.250078308
+Illinois,AIAN,115.13101326
+New Mexico,AIAN,72.817346738
+South Dakota,AIAN,65.508320996
+Michigan,Asian,90.934023829
+California,Asian,87.69959621
+Illinois,Asian,89.638974101
+New Mexico,Asian,88.09129733
+South Dakota,Asian,84.179902523
+Michigan,Black,73.641703571
+California,Black,76.167036179
+Illinois,Black,73.746091604
+New Mexico,Black,75.882398783
+South Dakota,Black,87.044584622
+Michigan,Hispanic,81.890860797
+California,Hispanic,83.805031533
+Illinois,Hispanic,86.150090468
+New Mexico,Hispanic,78.70737871
+South Dakota,Hispanic,91.315303331
+Michigan,White,78.770582148
+California,White,80.455961178
+Illinois,White,79.606240842
+New Mexico,White,78.706191143
+South Dakota,White,80.162843904

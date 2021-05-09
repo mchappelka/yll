@@ -1,0 +1,217 @@
+State,Age_Bracket,Age_Lower,Age_Upper,Race,Deaths,Bracket_Median_Age,Bracket_Mean_Age
+California,0_17,0.0,17.0,Total,14.0,8.5,8.58
+California,18_34,18.0,34.0,Total,709.0,26.0,26.03
+California,35_49,35.0,49.0,Total,2724.0,42.0,
+California,50_64,50.0,64.0,Total,10232.0,57.0,
+California,65_79,65.0,79.0,Total,17628.0,72.0,
+California,80+,80.0,,Total,20672.0,80.0,
+Illinois,0_19,0.0,19.0,Total,16.0,9.5,9.59
+Illinois,20_29,20.0,29.0,Total,64.0,24.5,24.46
+Illinois,30_39,30.0,39.0,Total,218.0,34.5,34.69
+Illinois,40_49,40.0,49.0,Total,567.0,44.5,44.3
+Illinois,50_59,50.0,59.0,Total,1386.0,54.5,54.09
+Illinois,60_69,60.0,69.0,Total,3270.0,64.5,64.3
+Illinois,70_79,70.0,79.0,Total,5127.0,74.5,74.23
+Illinois,80+,80.0,,Total,9978.0,80.0,85.19
+Michigan,0_9,0.0,9.0,Total,0.0,4.5,4.58
+Michigan,10_19,10.0,19.0,Total,7.0,14.5,14.84
+Michigan,20_29,20.0,29.0,Total,59.0,24.5,24.46
+Michigan,30_39,30.0,39.0,Total,119.0,34.5,34.69
+Michigan,40_49,40.0,49.0,Total,401.0,44.5,44.3
+Michigan,50_59,50.0,59.0,Total,1110.0,54.5,54.09
+Michigan,60_69,60.0,69.0,Total,2663.0,64.5,64.3
+Michigan,70_79,70.0,79.0,Total,4415.0,74.5,74.23
+Michigan,80+,80.0,,Total,7771.0,80.0,85.19
+New Mexico,18_44,18.0,44.0,Total,226.0,31.0,31.6
+New Mexico,45_64,45.0,64.0,Total,854.0,54.5,53.14
+New Mexico,65_74,65.0,74.0,Total,867.0,69.5,69.34
+New Mexico,75+,75.0,,Total,1781.0,75.0,81.49
+South Dakota,0_9,0.0,9.0,Total,0.0,4.5,4.58
+South Dakota,10_19,10.0,19.0,Total,0.0,14.5,14.84
+South Dakota,20_29,20.0,29.0,Total,7.0,24.5,24.46
+South Dakota,30_39,30.0,39.0,Total,18.0,34.5,34.69
+South Dakota,40_49,40.0,49.0,Total,35.0,44.5,44.3
+South Dakota,50_59,50.0,59.0,Total,113.0,54.5,54.09
+South Dakota,60_69,60.0,69.0,Total,250.0,64.5,64.3
+South Dakota,70_79,70.0,79.0,Total,432.0,74.5,74.23
+South Dakota,80+,80.0,,Total,1038.0,80.0,85.19
+California,0_17,0.0,17.0,White,3.0,8.5,8.58
+California,18_34,18.0,34.0,White,73.0,26.0,26.03
+California,35_49,35.0,49.0,White,275.0,42.0,
+California,50_64,50.0,64.0,White,1719.0,57.0,
+California,65_79,65.0,79.0,White,5089.0,72.0,
+California,80+,80.0,,White,9153.0,80.0,
+Illinois,0_19,0.0,19.0,White,0.0,9.5,9.59
+Illinois,20_29,20.0,29.0,White,6.0,24.5,24.46
+Illinois,30_39,30.0,39.0,White,26.0,34.5,34.69
+Illinois,40_49,40.0,49.0,White,114.0,44.5,44.3
+Illinois,50_59,50.0,59.0,White,438.0,54.5,54.09
+Illinois,60_69,60.0,69.0,White,1402.0,64.5,64.3
+Illinois,70_79,70.0,79.0,White,3005.0,74.5,74.23
+Illinois,80+,80.0,,White,7122.0,80.0,85.19
+Michigan,0_9,0.0,9.0,White,0.0,4.5,4.58
+Michigan,10_19,10.0,19.0,White,0.0,14.5,14.84
+Michigan,20_29,20.0,29.0,White,29.0,24.5,24.46
+Michigan,30_39,30.0,39.0,White,47.0,34.5,34.69
+Michigan,40_49,40.0,49.0,White,163.0,44.5,44.3
+Michigan,50_59,50.0,59.0,White,559.0,54.5,54.09
+Michigan,60_69,60.0,69.0,White,1488.0,64.5,64.3
+Michigan,70_79,70.0,79.0,White,2890.0,74.5,74.23
+Michigan,80+,80.0,,White,5938.0,80.0,85.19
+New Mexico,18_44,18.0,44.0,White,21.0,31.0,31.6
+New Mexico,45_64,45.0,64.0,White,120.0,54.5,53.14
+New Mexico,65_74,65.0,74.0,White,208.0,69.5,69.34
+New Mexico,75+,75.0,,White,745.0,75.0,81.49
+South Dakota,0_9,0.0,9.0,White,0.0,4.5,4.58
+South Dakota,10_19,10.0,19.0,White,0.0,14.5,14.84
+South Dakota,20_29,20.0,29.0,White,1.0,24.5,24.46
+South Dakota,30_39,30.0,39.0,White,3.0,34.5,34.69
+South Dakota,40_49,40.0,49.0,White,11.0,44.5,44.3
+South Dakota,50_59,50.0,59.0,White,53.0,54.5,54.09
+South Dakota,60_69,60.0,69.0,White,152.0,64.5,64.3
+South Dakota,70_79,70.0,79.0,White,330.0,74.5,74.23
+South Dakota,80+,80.0,,White,944.0,80.0,85.19
+California,0_17,0.0,17.0,Black,1.0,8.5,8.58
+California,18_34,18.0,34.0,Black,65.0,26.0,26.03
+California,35_49,35.0,49.0,Black,160.0,42.0,
+California,50_64,50.0,64.0,Black,655.0,57.0,
+California,65_79,65.0,79.0,Black,1198.0,72.0,
+California,80+,80.0,,Black,1143.0,80.0,
+Illinois,0_19,0.0,19.0,Black,7.0,9.5,9.59
+Illinois,20_29,20.0,29.0,Black,26.0,24.5,24.46
+Illinois,30_39,30.0,39.0,Black,73.0,34.5,34.69
+Illinois,40_49,40.0,49.0,Black,157.0,44.5,44.3
+Illinois,50_59,50.0,59.0,Black,358.0,54.5,54.09
+Illinois,60_69,60.0,69.0,Black,850.0,64.5,64.3
+Illinois,70_79,70.0,79.0,Black,978.0,74.5,74.23
+Illinois,80+,80.0,,Black,1197.0,80.0,85.19
+Michigan,0_9,0.0,9.0,Black,0.0,4.5,4.58
+Michigan,10_19,10.0,19.0,Black,0.0,14.5,14.84
+Michigan,20_29,20.0,29.0,Black,28.0,24.5,24.46
+Michigan,30_39,30.0,39.0,Black,48.0,34.5,34.69
+Michigan,40_49,40.0,49.0,Black,168.0,44.5,44.3
+Michigan,50_59,50.0,59.0,Black,424.0,54.5,54.09
+Michigan,60_69,60.0,69.0,Black,829.0,64.5,64.3
+Michigan,70_79,70.0,79.0,Black,1049.0,74.5,74.23
+Michigan,80+,80.0,,Black,1058.0,80.0,85.19
+New Mexico,18_44,18.0,44.0,Black,1.0,31.0,31.6
+New Mexico,45_64,45.0,64.0,Black,12.0,54.5,53.14
+New Mexico,65_74,65.0,74.0,Black,15.0,69.5,69.34
+New Mexico,75+,75.0,,Black,19.0,75.0,81.49
+South Dakota,0_9,0.0,9.0,Black,0.0,4.5,4.58
+South Dakota,10_19,10.0,19.0,Black,0.0,14.5,14.84
+South Dakota,20_29,20.0,29.0,Black,0.0,24.5,24.46
+South Dakota,30_39,30.0,39.0,Black,0.0,34.5,34.69
+South Dakota,40_49,40.0,49.0,Black,2.0,44.5,44.3
+South Dakota,50_59,50.0,59.0,Black,1.0,54.5,54.09
+South Dakota,60_69,60.0,69.0,Black,2.0,64.5,64.3
+South Dakota,70_79,70.0,79.0,Black,2.0,74.5,74.23
+South Dakota,80+,80.0,,Black,0.0,80.0,85.19
+California,0_17,0.0,17.0,Hispanic,6.0,8.5,8.58
+California,18_34,18.0,34.0,Hispanic,497.0,26.0,26.03
+California,35_49,35.0,49.0,Hispanic,2012.0,42.0,
+California,50_64,50.0,64.0,Hispanic,6478.0,57.0,
+California,65_79,65.0,79.0,Hispanic,8684.0,72.0,
+California,80+,80.0,,Hispanic,6299.0,80.0,
+Illinois,0_19,0.0,19.0,Hispanic,0.0,9.5,9.59
+Illinois,20_29,20.0,29.0,Hispanic,28.0,24.5,24.46
+Illinois,30_39,30.0,39.0,Hispanic,108.0,34.5,34.69
+Illinois,40_49,40.0,49.0,Hispanic,263.0,44.5,44.3
+Illinois,50_59,50.0,59.0,Hispanic,518.0,54.5,54.09
+Illinois,60_69,60.0,69.0,Hispanic,792.0,64.5,64.3
+Illinois,70_79,70.0,79.0,Hispanic,770.0,74.5,74.23
+Illinois,80+,80.0,,Hispanic,779.0,80.0,85.19
+Michigan,0_9,0.0,9.0,Hispanic,,4.5,4.58
+Michigan,10_19,10.0,19.0,Hispanic,,14.5,14.84
+Michigan,20_29,20.0,29.0,Hispanic,,24.5,24.46
+Michigan,30_39,30.0,39.0,Hispanic,,34.5,34.69
+Michigan,40_49,40.0,49.0,Hispanic,,44.5,44.3
+Michigan,50_59,50.0,59.0,Hispanic,,54.5,54.09
+Michigan,60_69,60.0,69.0,Hispanic,,64.5,64.3
+Michigan,70_79,70.0,79.0,Hispanic,,74.5,74.23
+Michigan,80+,80.0,,Hispanic,,80.0,85.19
+New Mexico,18_44,18.0,44.0,Hispanic,88.0,31.0,31.6
+New Mexico,45_64,45.0,64.0,Hispanic,353.0,54.5,53.14
+New Mexico,65_74,65.0,74.0,Hispanic,367.0,69.5,69.34
+New Mexico,75+,75.0,,Hispanic,661.0,75.0,81.49
+South Dakota,0_9,0.0,9.0,Hispanic,0.0,4.5,4.58
+South Dakota,10_19,10.0,19.0,Hispanic,0.0,14.5,14.84
+South Dakota,20_29,20.0,29.0,Hispanic,1.0,24.5,24.46
+South Dakota,30_39,30.0,39.0,Hispanic,1.0,34.5,34.69
+South Dakota,40_49,40.0,49.0,Hispanic,1.0,44.5,44.3
+South Dakota,50_59,50.0,59.0,Hispanic,2.0,54.5,54.09
+South Dakota,60_69,60.0,69.0,Hispanic,7.0,64.5,64.3
+South Dakota,70_79,70.0,79.0,Hispanic,4.0,74.5,74.23
+South Dakota,80+,80.0,,Hispanic,7.0,80.0,85.19
+California,0_17,0.0,17.0,Asian,2.0,8.5,8.58
+California,18_34,18.0,34.0,Asian,38.0,26.0,26.03
+California,35_49,35.0,49.0,Asian,170.0,42.0,
+California,50_64,50.0,64.0,Asian,730.0,57.0,
+California,65_79,65.0,79.0,Asian,1857.0,72.0,
+California,80+,80.0,,Asian,3200.0,80.0,
+Illinois,0_19,0.0,19.0,Asian,0.0,9.5,9.59
+Illinois,20_29,20.0,29.0,Asian,0.0,24.5,24.46
+Illinois,30_39,30.0,39.0,Asian,9.0,34.5,34.69
+Illinois,40_49,40.0,49.0,Asian,20.0,44.5,44.3
+Illinois,50_59,50.0,59.0,Asian,45.0,54.5,54.09
+Illinois,60_69,60.0,69.0,Asian,118.0,64.5,64.3
+Illinois,70_79,70.0,79.0,Asian,205.0,74.5,74.23
+Illinois,80+,80.0,,Asian,336.0,80.0,85.19
+Michigan,0_9,0.0,9.0,Asian,0.0,4.5,4.58
+Michigan,10_19,10.0,19.0,Asian,0.0,14.5,14.84
+Michigan,20_29,20.0,29.0,Asian,0.0,24.5,24.46
+Michigan,30_39,30.0,39.0,Asian,0.0,34.5,34.69
+Michigan,40_49,40.0,49.0,Asian,0.0,44.5,44.3
+Michigan,50_59,50.0,59.0,Asian,6.0,54.5,54.09
+Michigan,60_69,60.0,69.0,Asian,34.0,64.5,64.3
+Michigan,70_79,70.0,79.0,Asian,56.0,74.5,74.23
+Michigan,80+,80.0,,Asian,61.0,80.0,85.19
+New Mexico,18_44,18.0,44.0,Asian,0.0,31.0,31.6
+New Mexico,45_64,45.0,64.0,Asian,4.0,54.5,53.14
+New Mexico,65_74,65.0,74.0,Asian,9.0,69.5,69.34
+New Mexico,75+,75.0,,Asian,13.0,75.0,81.49
+South Dakota,0_9,0.0,9.0,Asian,0.0,4.5,4.58
+South Dakota,10_19,10.0,19.0,Asian,0.0,14.5,14.84
+South Dakota,20_29,20.0,29.0,Asian,0.0,24.5,24.46
+South Dakota,30_39,30.0,39.0,Asian,0.0,34.5,34.69
+South Dakota,40_49,40.0,49.0,Asian,1.0,44.5,44.3
+South Dakota,50_59,50.0,59.0,Asian,2.0,54.5,54.09
+South Dakota,60_69,60.0,69.0,Asian,4.0,64.5,64.3
+South Dakota,70_79,70.0,79.0,Asian,1.0,74.5,74.23
+South Dakota,80+,80.0,,Asian,8.0,80.0,85.19
+California,0_17,0.0,17.0,AIAN,0.0,8.5,8.58
+California,18_34,18.0,34.0,AIAN,4.0,26.0,26.03
+California,35_49,35.0,49.0,AIAN,10.0,42.0,
+California,50_64,50.0,64.0,AIAN,34.0,57.0,
+California,65_79,65.0,79.0,AIAN,68.0,72.0,
+California,80+,80.0,,AIAN,60.0,80.0,
+Illinois,0_19,0.0,19.0,AIAN,0.0,9.5,9.59
+Illinois,20_29,20.0,29.0,AIAN,0.0,24.5,24.46
+Illinois,30_39,30.0,39.0,AIAN,0.0,34.5,34.69
+Illinois,40_49,40.0,49.0,AIAN,0.0,44.5,44.3
+Illinois,50_59,50.0,59.0,AIAN,0.0,54.5,54.09
+Illinois,60_69,60.0,69.0,AIAN,9.0,64.5,64.3
+Illinois,70_79,70.0,79.0,AIAN,6.0,74.5,74.23
+Illinois,80+,80.0,,AIAN,8.0,80.0,85.19
+Michigan,0_9,0.0,9.0,AIAN,0.0,4.5,4.58
+Michigan,10_19,10.0,19.0,AIAN,0.0,14.5,14.84
+Michigan,20_29,20.0,29.0,AIAN,0.0,24.5,24.46
+Michigan,30_39,30.0,39.0,AIAN,0.0,34.5,34.69
+Michigan,40_49,40.0,49.0,AIAN,0.0,44.5,44.3
+Michigan,50_59,50.0,59.0,AIAN,0.0,54.5,54.09
+Michigan,60_69,60.0,69.0,AIAN,25.0,64.5,64.3
+Michigan,70_79,70.0,79.0,AIAN,23.0,74.5,74.23
+Michigan,80+,80.0,,AIAN,13.0,80.0,85.19
+New Mexico,18_44,18.0,44.0,AIAN,127.0,31.0,31.6
+New Mexico,45_64,45.0,64.0,AIAN,351.0,54.5,53.14
+New Mexico,65_74,65.0,74.0,AIAN,255.0,69.5,69.34
+New Mexico,75+,75.0,,AIAN,329.0,75.0,81.49
+South Dakota,0_9,0.0,9.0,AIAN,0.0,4.5,4.58
+South Dakota,10_19,10.0,19.0,AIAN,0.0,14.5,14.84
+South Dakota,20_29,20.0,29.0,AIAN,4.0,24.5,24.46
+South Dakota,30_39,30.0,39.0,AIAN,12.0,34.5,34.69
+South Dakota,40_49,40.0,49.0,AIAN,18.0,44.5,44.3
+South Dakota,50_59,50.0,59.0,AIAN,51.0,54.5,54.09
+South Dakota,60_69,60.0,69.0,AIAN,70.0,64.5,64.3
+South Dakota,70_79,70.0,79.0,AIAN,72.0,74.5,74.23
+South Dakota,80+,80.0,,AIAN,37.0,80.0,85.19
