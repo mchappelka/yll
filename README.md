@@ -1,5 +1,5 @@
 # Overview
-We seek to quantify the years of life lost due to COVID-19 in Georgia, using race and county specific life expectancy. Georgia was chosen because the race, age, and county is reported for each recorded COVID-19 death. 
+We seek to quantify the years of life lost due to COVID-19 in California, Georgia, Illinois, Michigan, New Mexico and South Dakota using race and geography specific (county or state) life expectancy. 
 
 # Running the code
 Open create_analytic.py
@@ -7,12 +7,11 @@ Specify the dataset you'd like created
 Run
 
 # Data sources used
-* GA county life expectancy by race: https://www.countyhealthrankings.org/app/georgia/2020/measure/outcomes/147/data 
+* Life expectancy data: https://www.countyhealthrankings.org/app/georgia/2021/downloads
 * GA race and population demographic data: https://www.census.gov/data/tables/time-series/demo/popest/2010s-counties-detail.html 
-* Death data: https://docs.google.com/spreadsheets/d/1naiRW57-uPggIPpDN5OFKwcBfCokiyxh0YgW1iCdLD0/edit#gid=0 
+* Georgia person-level death data: https://docs.google.com/spreadsheets/d/1naiRW57-uPggIPpDN5OFKwcBfCokiyxh0YgW1iCdLD0/edit#gid=0 
+* State level death data: https://docs.google.com/spreadsheets/d/1e4jogN9bryY8Odb2AaIavLNN-MnMU3hsdeQTWeVhCRo/edit#gid=1019753044
 
-# Resulting data
-https://drive.google.com/file/d/1vYRXa8rsQfSaE_GHCM_CW_IFoPreIYkP/view?usp=sharing
 
 # Specifications
 * Read in the death data.  
