@@ -39,9 +39,26 @@ df = functions.calc_yll(df = df
                         ,age="Age_Upper"
                         )
 
+##############################################################################
+#                                                                            #
+#                   Calculate total YLL for race and state, all ages         #
+#                                                                            #
+##############################################################################
 
+record_level_cols = ["State"]
+sum_cols = ['Deaths'] + [col for col in df.columns if 'YLL' in col]
+keep_cols = record_level_cols + sum_cols
 
+state_df = df[keep_cols].groupby(record_level_cols).sum().reset_index()
+state_df["Age_Bracket"] = "All"
 
+df = df.append(state_df)
+
+##############################################################################
+#                                                                            #
+#                                    Output                                  #
+#                                                                            #
+##############################################################################
  
 df.to_csv(os.path.join(params.ANALYTIC_PATH, 'state_yll.csv'), index=False)
 
