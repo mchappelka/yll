@@ -47,18 +47,19 @@ def process_le(is_county, outfilename):
 
 
     if is_county:
-        df2 = df[~df['County'].isna()]
-    else:
-        df2 = df[df['County'].isna()]
+        state_df = df[df['County'].isna()]
+        df = df[~df['County'].isna()]
+    else: 
+        df = df[df['County'].isna()]
 
     # subset to columns of interest
-    df3 = df2[cols_to_keep]  
+    df2 = df[cols_to_keep]  
 
     # rename columns
-    df4 = df3.rename(columns = {"Life Expectancy":"Life Expectancy (Total)"})
+    df3 = df2.rename(columns = {"Life Expectancy":"Life Expectancy (Total)"})
 
     # transform from wide to long
-    df_long = pd.melt(df4, id_vars = id_vars
+    df_long = pd.melt(df3, id_vars = id_vars
                     ,var_name="Race"
                     ,value_name="Life Expectancy")
 
@@ -66,12 +67,26 @@ def process_le(is_county, outfilename):
     df_long["Race"] = df_long['Race'].str.extract(r"\((.*?)\)", expand=False)
 
     if is_county:
+        # Calculate county life expectancy (LE based on entire population in county)
         total_df = df_long[df_long.Race == "Total"]
         total_df = total_df[["State", "County", "Life Expectancy"]]
         total_df = total_df.rename(columns = {"Life Expectancy":"County Life Expectancy"})
+
+        # Calculate race-county life expectancy (LE based on population of a certain race in county)
         df_long = df_long[~(df_long.Race == "Total")]
         df_long = df_long.rename(columns = {"Life Expectancy": "Race-County Life Expectancy"})
         df_long = pd.merge(df_long, total_df, how="left", on=["State", "County"])
+
+        # Calculate race-State life expectancy (LE based on population of a certain race in state)
+        state_df = state_df[cols_to_keep]  
+        state_df = state_df.rename(columns = {"Life Expectancy":"Life Expectancy (State)"})
+        state_long = pd.melt(state_df, id_vars = id_vars
+                ,var_name="Race"
+                ,value_name="Life Expectancy")
+        state_long = state_long.rename(columns = {"Life Expectancy":"Race-State Life Expectancy"})
+        state_long["Race"] = state_long['Race'].str.extract(r"\((.*?)\)", expand=False)
+        state_long = state_long.drop(columns=['County'])
+        df_long = pd.merge(df_long, state_long, how="left", on=["State", "Race"])
 
     df_long.to_csv(os.path.join(params.CLEAN_DATA_PATH, outfilename), index=False)
 
