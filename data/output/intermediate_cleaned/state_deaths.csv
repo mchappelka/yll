@@ -1,10 +1,10 @@
 State,Age_Bracket,Age_Lower,Age_Upper,Race,Deaths,Bracket_Median_Age,Bracket_Mean_Age
 California,0_17,0.0,17.0,Total,14.0,8.5,8.58
 California,18_34,18.0,34.0,Total,709.0,26.0,26.03
-California,35_49,35.0,49.0,Total,2724.0,42.0,
-California,50_64,50.0,64.0,Total,10232.0,57.0,
-California,65_79,65.0,79.0,Total,17628.0,72.0,
-California,80+,80.0,,Total,20672.0,80.0,
+California,35_49,35.0,49.0,Total,2724.0,42.0,41.8
+California,50_64,50.0,64.0,Total,10232.0,57.0,56.12
+California,65_79,65.0,79.0,Total,17628.0,72.0,71.55
+California,80+,80.0,,Total,20672.0,80.0,85.19
 Illinois,0_19,0.0,19.0,Total,16.0,9.5,9.59
 Illinois,20_29,20.0,29.0,Total,64.0,24.5,24.46
 Illinois,30_39,30.0,39.0,Total,218.0,34.5,34.69
@@ -37,10 +37,10 @@ South Dakota,70_79,70.0,79.0,Total,432.0,74.5,74.23
 South Dakota,80+,80.0,,Total,1038.0,80.0,85.19
 California,0_17,0.0,17.0,White,3.0,8.5,8.58
 California,18_34,18.0,34.0,White,73.0,26.0,26.03
-California,35_49,35.0,49.0,White,275.0,42.0,
-California,50_64,50.0,64.0,White,1719.0,57.0,
-California,65_79,65.0,79.0,White,5089.0,72.0,
-California,80+,80.0,,White,9153.0,80.0,
+California,35_49,35.0,49.0,White,275.0,42.0,41.8
+California,50_64,50.0,64.0,White,1719.0,57.0,56.12
+California,65_79,65.0,79.0,White,5089.0,72.0,71.55
+California,80+,80.0,,White,9153.0,80.0,85.19
 Illinois,0_19,0.0,19.0,White,0.0,9.5,9.59
 Illinois,20_29,20.0,29.0,White,6.0,24.5,24.46
 Illinois,30_39,30.0,39.0,White,26.0,34.5,34.69
@@ -73,10 +73,10 @@ South Dakota,70_79,70.0,79.0,White,330.0,74.5,74.23
 South Dakota,80+,80.0,,White,944.0,80.0,85.19
 California,0_17,0.0,17.0,Black,1.0,8.5,8.58
 California,18_34,18.0,34.0,Black,65.0,26.0,26.03
-California,35_49,35.0,49.0,Black,160.0,42.0,
-California,50_64,50.0,64.0,Black,655.0,57.0,
-California,65_79,65.0,79.0,Black,1198.0,72.0,
-California,80+,80.0,,Black,1143.0,80.0,
+California,35_49,35.0,49.0,Black,160.0,42.0,41.8
+California,50_64,50.0,64.0,Black,655.0,57.0,56.12
+California,65_79,65.0,79.0,Black,1198.0,72.0,71.55
+California,80+,80.0,,Black,1143.0,80.0,85.19
 Illinois,0_19,0.0,19.0,Black,7.0,9.5,9.59
 Illinois,20_29,20.0,29.0,Black,26.0,24.5,24.46
 Illinois,30_39,30.0,39.0,Black,73.0,34.5,34.69
@@ -109,10 +109,10 @@ South Dakota,70_79,70.0,79.0,Black,2.0,74.5,74.23
 South Dakota,80+,80.0,,Black,0.0,80.0,85.19
 California,0_17,0.0,17.0,Hispanic,6.0,8.5,8.58
 California,18_34,18.0,34.0,Hispanic,497.0,26.0,26.03
-California,35_49,35.0,49.0,Hispanic,2012.0,42.0,
-California,50_64,50.0,64.0,Hispanic,6478.0,57.0,
-California,65_79,65.0,79.0,Hispanic,8684.0,72.0,
-California,80+,80.0,,Hispanic,6299.0,80.0,
+California,35_49,35.0,49.0,Hispanic,2012.0,42.0,41.8
+California,50_64,50.0,64.0,Hispanic,6478.0,57.0,56.12
+California,65_79,65.0,79.0,Hispanic,8684.0,72.0,71.55
+California,80+,80.0,,Hispanic,6299.0,80.0,85.19
 Illinois,0_19,0.0,19.0,Hispanic,0.0,9.5,9.59
 Illinois,20_29,20.0,29.0,Hispanic,28.0,24.5,24.46
 Illinois,30_39,30.0,39.0,Hispanic,108.0,34.5,34.69
@@ -145,10 +145,10 @@ South Dakota,70_79,70.0,79.0,Hispanic,4.0,74.5,74.23
 South Dakota,80+,80.0,,Hispanic,7.0,80.0,85.19
 California,0_17,0.0,17.0,Asian,2.0,8.5,8.58
 California,18_34,18.0,34.0,Asian,38.0,26.0,26.03
-California,35_49,35.0,49.0,Asian,170.0,42.0,
-California,50_64,50.0,64.0,Asian,730.0,57.0,
-California,65_79,65.0,79.0,Asian,1857.0,72.0,
-California,80+,80.0,,Asian,3200.0,80.0,
+California,35_49,35.0,49.0,Asian,170.0,42.0,41.8
+California,50_64,50.0,64.0,Asian,730.0,57.0,56.12
+California,65_79,65.0,79.0,Asian,1857.0,72.0,71.55
+California,80+,80.0,,Asian,3200.0,80.0,85.19
 Illinois,0_19,0.0,19.0,Asian,0.0,9.5,9.59
 Illinois,20_29,20.0,29.0,Asian,0.0,24.5,24.46
 Illinois,30_39,30.0,39.0,Asian,9.0,34.5,34.69
@@ -181,10 +181,10 @@ South Dakota,70_79,70.0,79.0,Asian,1.0,74.5,74.23
 South Dakota,80+,80.0,,Asian,8.0,80.0,85.19
 California,0_17,0.0,17.0,AIAN,0.0,8.5,8.58
 California,18_34,18.0,34.0,AIAN,4.0,26.0,26.03
-California,35_49,35.0,49.0,AIAN,10.0,42.0,
-California,50_64,50.0,64.0,AIAN,34.0,57.0,
-California,65_79,65.0,79.0,AIAN,68.0,72.0,
-California,80+,80.0,,AIAN,60.0,80.0,
+California,35_49,35.0,49.0,AIAN,10.0,42.0,41.8
+California,50_64,50.0,64.0,AIAN,34.0,57.0,56.12
+California,65_79,65.0,79.0,AIAN,68.0,72.0,71.55
+California,80+,80.0,,AIAN,60.0,80.0,85.19
 Illinois,0_19,0.0,19.0,AIAN,0.0,9.5,9.59
 Illinois,20_29,20.0,29.0,AIAN,0.0,24.5,24.46
 Illinois,30_39,30.0,39.0,AIAN,0.0,34.5,34.69
