@@ -1,0 +1,12 @@
+State: california, Illinois, Michigan, New Mexico, or South Dakota
+Age_Bracket: The age brackets that state reported
+Age_Lower: The minimum value of the age bracket
+Age_Upper: The maximum of the age bracket
+Race: Race/ethnicity. Can be AIAN (American Indian Alaska Native), Asian, Black Hispanic, White, or Total (Total rows contain the calculations for the entire state)
+Deaths: The number of deaths
+Bracket_Median_Age: The median number in the age brucket
+Bracket_Mean_Age: The weighted mean age in a bracket, based on the distribution of age in the population of that state
+Life Expectancy: The life expectancy of people of that race within that state (not adjusted for age)
+YLL (based on age bracket median): years of life lost, assuming age at death was the age bracket median
+YLL (based on age bracket weighted mean): years of life lost, assuming age at death was the age bracket weighted mean
+YLL (based on upper age in bracket): years of life lost, assuming age at death was the upper age in bracket
