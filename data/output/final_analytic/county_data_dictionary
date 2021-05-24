@@ -1,1 +1,14 @@
 
+ethnicity: Non-Hispanic or Hispanic
+sex: Male or Female
+County: The counties in Georgia
+Age: age in years
+Race: race/ethnicity
+Deaths: flag variable indicating that an individual died. 1 for everybody
+State: Georgia for everybody
+Race-County Life Expectancy: life expectancy for people of that race in that county
+County Life Expectancy: life expectancy for people in that county, all races
+Race-State Life Expectancy: life expectancy for people of that race in that state (Georgia)
+YLL_racecounty: years of life lost assuming life expectancy was Race-County Life Expectancy
+YLL_county: years of life lost assuming life expectancy was County Life Expectancy
+YLL_racestate: years of life lost assuming life expectancy was Race-State Life Expectancy
